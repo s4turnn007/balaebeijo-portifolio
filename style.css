@@ -1,0 +1,422 @@
+body {
+  margin: 0;
+  font-family: "Archivo Narrow", sans-serif;
+  background-color: #ffd6d6;
+}
+
+/* HERO */
+.hero {
+  background-color: #e02424;
+  position: relative;
+  height: 190px; /* altura da header */
+  display: flex;
+  justify-content: center; /* centraliza o slogan container horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  overflow: hidden;
+}
+
+/* LOGO tipo selo no canto esquerdo */
+.logo {
+  position: absolute;
+  left: 0;
+  top: -40px;  /* para parecer selo */
+  max-width: 195px;
+  height: auto;
+  transition: transform 0.6s ease;
+}
+
+.hero:hover .logo {
+  transform: translateY(-10px); /* animação suave no hover */
+}
+
+/* Container do slogan */
+.slogan-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* ocupa todo o espaço para centralizar */
+}
+
+/* Slogan centralizado */
+.slogan {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 35px;
+  color: #ffd6d6;
+  text-align: center;
+  transition: transform 0.6s ease, color 0.6s ease;
+}
+
+.hero:hover .slogan { 
+  color: #fff8ba; /* amarelinho suave */ 
+  transform: translateY(-10px); /* salta levemente igual a logo */ 
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .hero {
+    height: 120px;
+  }
+  .logo {
+    max-width: 90px;
+    top: -30px;
+  }
+  .slogan {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+}
+
+.mensagemsuperior {
+  background-color: #ffe6e6;
+  padding: 15px 20px;
+  margin: 20px auto; /* dá o respiro vertical */
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* sombra bem suave */
+  max-width: 800px; /* pra não ficar gigante em tela larga */
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mensagemsuperior p {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #5a2d2d;
+  letter-spacing: 0.5px;
+}
+
+.mensagemsuperior:hover {
+  transform: translateY(-3px); /* levanta só um tiquinho */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12); /* sombra mais marcadinha no hover */
+}
+
+/* Produtos Grid */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Card de Produto */
+.produto-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Mini Carrossel */
+.mini-carrossel {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.mini-carrossel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease, opacity 0.35s ease-in-out;
+}
+
+.swiper-slide-active img {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 2;
+}
+
+.swiper-slide-prev img,
+.swiper-slide-next img {
+  opacity: 0;
+  transform: translateY(-10px);
+  z-index: 1;
+}
+
+/* Swiper Botões */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(0,0,0,0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+}
+
+.swiper-button-prev { left: 5px; }
+.swiper-button-next { right: 5px; }
+
+/* Contador */
+.contador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.contador button {
+  background-color: #e02424;
+  transition: transform 0.1s ease;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.contador button:hover {
+  background-color: #b81a1a;
+}
+
+.contador button:active {
+  transform: scale(0.95);
+}
+
+.contador .quantidade {
+  margin: 0 10px;
+  font-size: 16px;
+  min-width: 20px;
+  display: inline-block;
+}
+
+/* Botão WhatsApp */
+.wpp-row {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 30px;
+}
+
+.btn-whatsapp {
+  padding: 12px 25px;
+  background-color: #25d366;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
+  max-width: 260px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe57;
+  transform: scale(1.05);
+}
+
+/* Redes Sociais */
+.redes-sociais {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.redes-sociais p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.redes-sociais .icons {
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  transition: transform 0.2s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #e02424;
+  color: #fff;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+/* Copy + Rovers */
+.copy {
+  display: inline-flex;         /* vira flexbox */
+  align-items: center;          /* alinha as bolinhas no centro do texto */
+  gap: 8px;                     /* espaço entre itens */
+  cursor: default;
+  color: #fff;
+  font-weight: bold;
+  overflow: hidden;
+  transition: transform 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.copy .rover {
+  flex-shrink: 0;               /* evita achatar a bolinha */
+  width: 6px;
+  height: 6px;
+  background-color: #fffacd;    /* amarelinho suave */
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+/* Flash */
+.copy::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+/* Hover: tudo levanta */
+.copy:hover {
+  transform: translateY(-3px);
+  color: #fffacd;
+}
+
+.copy:hover .rover {
+  transform: translateY(-4px) scale(1.1);
+}
+
+.copy:hover::after {
+  animation: lightPass 1s;
+}
+
+/* Flash atravessando */
+@keyframes lightPass {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .produtos { grid-template-columns: repeat(2, 1fr); }
+  .mini-carrossel { width: 180px; height: 180px; }
+  .social-icon { width: 40px; height: 40px; }
+}
+
+@media screen and (max-width: 480px) {
+  .produtos { grid-template-columns: 1fr; }
+  .mini-carrossel { width: 160px; height: 160px; }
+  .swiper-button-prev, .swiper-button-next { width: 22px; height: 22px; }
+  .swiper-button-prev::after, .swiper-button-next::after { font-size: 14px; }
+}
+
+/* POP-UP CUSTOMIZADO COM SLIDE + BOUNCE */
+.custom-alert {
+  position: fixed;
+  top: -100px; /* começa fora da tela */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e02424; /* cor do header */
+  color: white;
+  font-family: 'Archivo Black', 'Arial', sans-serif;
+  font-size: 16px;
+  padding: 20px 40px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 9999;
+  animation: slideBounceIn 0.6s forwards, slideBounceOut 0.6s 2.7s forwards; /* entra e depois sai */
+}
+
+/* animação slide + bounce de entrada */
+@keyframes slideBounceIn {
+  0% { top: -100px; }
+  60% { top: 40px; }
+  80% { top: 30px; }
+  100% { top: 35px; }
+}
+
+/* animação slide + bounce de saída */
+@keyframes slideBounceOut {
+  0% { top: 35px; opacity: 1; }        /* começa na posição final */
+  20% { top: 45px; }                    /* bounce pra baixo */
+  100% { top: -100px; opacity: 0; }     /* desliza pra cima e some */
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background-color: #e02424;
+  color: #ffd6d6;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+  transition: opacity 0.4s ease;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#backToTop:hover {
+  transform: scale(1.1);
+}
+
+/* seta interna */
+#backToTop .arrow {
+  display: inline-block;
+  transform: rotate(-90deg); /* a seta continua girada */
+  font-size: 32px;
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 700;
+}
+
+/* animação bounce só do botão */
+@keyframes backToTopBounce {
+  0%   { transform: translateY(0); }
+  60%  { transform: translateY(-180px); }
+  80%  { transform: translateY(-160px); }
+  100% { transform: translateY(0); }
+}
